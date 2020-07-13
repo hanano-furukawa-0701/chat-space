@@ -42,7 +42,10 @@ $(function() {
       $('#user-search-result').empty();
       if(users.length !== 0){
         users.forEach(function(user){
-          addUser(user);
+          let idNum = document.getElementById(user.id);
+          if (user.id && !idNum){
+            addUser(user);
+          }
         });
        } else if (input.length == 0){
          return false;
